@@ -1,6 +1,7 @@
 from .shareus import Shareus
 from .adlinkfly import Adlinkfly
 from .shareusio import ShareusIO
+from .seturl import SetURL
 
 
 class Shortzy:
@@ -24,6 +25,8 @@ class Shortzy:
             self.shortener = Shareus(api_key, base_site=base_site)
         elif self.base_site == "shareus.io":
             self.shortener = ShareusIO(api_key, base_site=base_site)
+        elif self.base_site == "seturl.in":
+            self.shortener = SetURL(api_key, base_site=base_site)
         else:
             self.shortener = Adlinkfly(api_key, base_site=base_site)
 
@@ -149,6 +152,7 @@ class Shortzy:
             "viplink.in",
             "shorturllink.in",
             "shareus.in",
+            "seturl.in",  # ✅ Added seturl support
             "All droplink.co Alternative Websites",
         ]
         return "\n".join(available_websites)
